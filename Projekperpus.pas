@@ -171,4 +171,27 @@ begin
     readln; //menunggu pengguna menekan Enter sebelum kembali ke menu
 end;
 begin
+    jumlahBuku := 0; // Inisialisasi jumlah buku
+    repeat
+        writeln('=== Menu Utama ===');
+        writeln('1. Tambah Buku');
+        writeln('2. Tampilkan Daftar Buku');
+        writeln('3. Cari Buku');
+        writeln('4. Edit Buku');
+        writeln('5. Hapus Buku');
+        writeln('6. Keluar');
+        write('Pilih opsi: ');
+        readln(pilihan);
+
+        case pilihan of
+            1: TambahBuku;
+            2: TampilkanBuku;
+            3: CariBuku;
+            4: EditBuku;
+            5: HapusBuku;
+            6: writeln('Terima kasih! Sampai jumpa!');
+        else
+            writeln('Pilihan tidak valid! Silakan coba lagi.');
+        end;
+    until pilihan = 6;
 end.
