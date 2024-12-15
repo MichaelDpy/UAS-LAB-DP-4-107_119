@@ -140,5 +140,35 @@ begin
     writeln('Tekan Enter untuk kembali ke menu utama...');
     readln; // Menunggu pengguna menekan Enter sebelum kembali ke menu
 end;
+//prosedur untuk menghapus buku
+procedure HapusBuku;
+var
+    kodeHapus: string;
+    i, j: integer;
+    ditemukan: boolean;
+begin
+    writeln('=== Hapus Buku ===');
+    write('Masukkan Kode Buku yang ingin dihapus: ');
+    readln(kodeHapus);
+    ditemukan := false;
+
+    for i := 1 to jumlahBuku do
+    begin
+        if daftarBuku[i].kode = kodeHapus then
+        begin
+            ditemukan := true;
+            for j := i to jumlahBuku - 1 do
+                daftarBuku[j] := daftarBuku[j + 1];
+            dec(jumlahBuku);
+            writeln('Buku berhasil dihapus!');
+            break;
+        end;
+    end;
+
+    if not ditemukan then
+        writeln('Buku dengan kode tersebut tidak ditemukan.');
+    writeln('Tekan Enter untuk kembali ke menu utama...');
+    readln; //menunggu pengguna menekan Enter sebelum kembali ke menu
+end;
 begin
 end.
