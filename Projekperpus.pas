@@ -98,5 +98,47 @@ begin
     writeln('Tekan Enter untuk kembali ke menu utama...');
     readln; //menunggu pengguna menekan Enter sebelum kembali ke menu
 end;
+// Prosedur untuk mengedit buku
+procedure EditBuku;
+var
+    kodeCari: string;
+    i: integer;
+    ditemukan: boolean;
+begin
+    writeln('=== Edit Buku ===');
+    write('Masukkan Kode Buku yang ingin diedit: ');
+    readln(kodeCari);
+    ditemukan := false;
+
+    for i := 1 to jumlahBuku do
+    begin
+        if daftarBuku[i].kode = kodeCari then
+        begin
+            ditemukan := true;
+            writeln('Buku ditemukan!');
+            writeln('Judul: ', daftarBuku[i].judul);
+            writeln('Penulis: ', daftarBuku[i].penulis);
+            writeln('Tahun Terbit: ', daftarBuku[i].tahun);
+            writeln('Jumlah: ', daftarBuku[i].jumlah);
+            
+            write('Masukkan Judul Baru: ');
+            readln(daftarBuku[i].judul);
+            write('Masukkan Penulis Baru: ');
+            readln(daftarBuku[i].penulis);
+            write('Masukkan Tahun Terbit Baru: ');
+            readln(daftarBuku[i].tahun);
+            write('Masukkan Jumlah Baru: ');
+            readln(daftarBuku[i].jumlah);
+            
+            writeln('Buku berhasil diperbarui!');
+            break;
+        end;
+    end;
+
+    if not ditemukan then
+        writeln('Buku dengan kode tersebut tidak ditemukan.');
+    writeln('Tekan Enter untuk kembali ke menu utama...');
+    readln; // Menunggu pengguna menekan Enter sebelum kembali ke menu
+end;
 begin
 end.
