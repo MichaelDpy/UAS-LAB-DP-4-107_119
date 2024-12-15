@@ -16,7 +16,7 @@ var
     daftarBuku: array[1..MAX_BUKU] of Buku;
     jumlahBuku: integer;
     pilihan: integer;
-// Prosedur untuk menambah buku
+//prosedur untuk menambah buku
 procedure TambahBuku;
 var
     bukuBaru: Buku;
@@ -42,7 +42,7 @@ begin
     else
         writeln('Daftar buku sudah penuh!');
 end;
-// Prosedur untuk menampilkan semua buku
+//prosedur untuk menampilkan semua buku
 procedure TampilkanBuku;
 var
     i: integer;
@@ -64,7 +64,39 @@ begin
         end;
     end;
     writeln('Tekan Enter untuk kembali ke menu utama...');
-    readln; // Menunggu pengguna menekan Enter sebelum kembali ke menu
+    readln; //menunggu pengguna menekan Enter sebelum kembali ke menu
+end;
+//prosedur untuk mencari buku
+procedure CariBuku;
+var
+    judulCari: string;
+    i: integer;
+    ditemukan: boolean;
+begin
+    writeln('=== Cari Buku ===');
+    write('Masukkan Judul Buku yang dicari: ');
+    readln(judulCari);
+    ditemukan := false;
+
+    for i := 1 to jumlahBuku do
+    begin
+        if daftarBuku[i].judul = judulCari then
+        begin
+            ditemukan := true;
+            writeln('Buku ditemukan!');
+            writeln('Judul: ', daftarBuku[i].judul);
+            writeln('Penulis: ', daftarBuku[i].penulis);
+            writeln('Tahun Terbit: ', daftarBuku[i].tahun);
+            writeln('Kode: ', daftarBuku[i].kode);
+            writeln('Jumlah: ', daftarBuku[i].jumlah);
+            break;
+        end;
+    end;
+
+    if not ditemukan then
+        writeln('Buku dengan judul tersebut tidak ditemukan.');
+    writeln('Tekan Enter untuk kembali ke menu utama...');
+    readln; //menunggu pengguna menekan Enter sebelum kembali ke menu
 end;
 begin
 end.
