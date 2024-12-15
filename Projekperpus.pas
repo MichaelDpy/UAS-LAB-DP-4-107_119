@@ -42,5 +42,29 @@ begin
     else
         writeln('Daftar buku sudah penuh!');
 end;
+// Prosedur untuk menampilkan semua buku
+procedure TampilkanBuku;
+var
+    i: integer;
+begin
+    writeln('=== Daftar Buku ===');
+    if jumlahBuku = 0 then
+        writeln('Tidak ada buku dalam daftar.')
+    else
+    begin
+        for i := 1 to jumlahBuku do
+        begin
+            writeln('Buku ke-', i);
+            writeln('Judul: ', daftarBuku[i].judul);
+            writeln('Penulis: ', daftarBuku[i].penulis);
+            writeln('Tahun Terbit: ', daftarBuku[i].tahun);
+            writeln('Kode: ', daftarBuku[i].kode);
+            writeln('Jumlah: ', daftarBuku[i].jumlah);
+            writeln('-------------------');
+        end;
+    end;
+    writeln('Tekan Enter untuk kembali ke menu utama...');
+    readln; // Menunggu pengguna menekan Enter sebelum kembali ke menu
+end;
 begin
 end.
