@@ -1,4 +1,4 @@
-program manajemen_buku_perpustakaan
+program manajemen_buku_perpustakaan;
 uses crt;
 const
     MAX_BUKU = 100;
