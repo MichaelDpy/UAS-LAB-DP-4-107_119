@@ -8,3 +8,6 @@ Project manajemen buku perpustakaan
 
 *Link Google Drive:*
 https://drive.google.com/drive/folders/1afLjSxXt_3MoVOUjjWkWxqMRe7fjJ1zh?usp=drive_link
+
+*Link Youtube*
+https://youtu.be/hIaKLuxoECM
